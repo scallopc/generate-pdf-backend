@@ -38,7 +38,7 @@ app.post("/generate-pdf", async (req, res) => {
       "Content-Disposition": 'attachment; filename="documento.pdf"',
       "Content-Length": pdfBuffer.length,
     });
-    res.send(pdfBuffer);
+    res.end(pdfBuffer);
   } catch (error) {
     console.error("Erro ao gerar PDF:", error);
     res
